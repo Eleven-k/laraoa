@@ -29,7 +29,7 @@ class OaLogController extends AdminController
         
             $grid->enableDialogCreate();
             $grid->toolsWithOutline(false);
-            $grid->setDialogFormDimensions('50%', '60%');
+            $grid->setDialogFormDimensions('50%', '50%');
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
         
@@ -69,9 +69,9 @@ class OaLogController extends AdminController
             $form->display('id');
             $form->text('title')->rules('required|min:2');
             $form->textarea('content')->rules('required|min:5');
-            $form->text('user_id')->default(1);
-            $form->text('reply_count')->default(0);
-            $form->text('view_count')->default(0);
+            $form->hidden('user_id')->default(1);
+            $form->hidden('reply_count')->default(0);
+            $form->hidden('view_count')->default(0);
         
             $form->display('created_at');
             $form->display('updated_at');

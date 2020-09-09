@@ -1,7 +1,7 @@
 <?php 
 return [
     'labels' => [
-        'OaLog' => 'OaLog',
+        'OaLog' => '日志',
     ],
     'fields' => [
         'title' => '标题',
