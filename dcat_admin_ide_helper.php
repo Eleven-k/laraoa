@@ -47,7 +47,9 @@ namespace Dcat\Admin {
      * @property Grid\Column|Collection payload
      * @property Grid\Column|Collection exception
      * @property Grid\Column|Collection failed_at
+     * @property Grid\Column|Collection finish
      * @property Grid\Column|Collection content
+     * @property Grid\Column|Collection unfinished
      * @property Grid\Column|Collection reply_count
      * @property Grid\Column|Collection view_count
      * @property Grid\Column|Collection email
@@ -90,7 +92,9 @@ namespace Dcat\Admin {
      * @method Grid\Column|Collection payload(string $label = null)
      * @method Grid\Column|Collection exception(string $label = null)
      * @method Grid\Column|Collection failed_at(string $label = null)
+     * @method Grid\Column|Collection finish(string $label = null)
      * @method Grid\Column|Collection content(string $label = null)
+     * @method Grid\Column|Collection unfinished(string $label = null)
      * @method Grid\Column|Collection reply_count(string $label = null)
      * @method Grid\Column|Collection view_count(string $label = null)
      * @method Grid\Column|Collection email(string $label = null)
@@ -138,7 +142,9 @@ namespace Dcat\Admin {
      * @property Show\Field|Collection payload
      * @property Show\Field|Collection exception
      * @property Show\Field|Collection failed_at
+     * @property Show\Field|Collection finish
      * @property Show\Field|Collection content
+     * @property Show\Field|Collection unfinished
      * @property Show\Field|Collection reply_count
      * @property Show\Field|Collection view_count
      * @property Show\Field|Collection email
@@ -181,7 +187,9 @@ namespace Dcat\Admin {
      * @method Show\Field|Collection payload(string $label = null)
      * @method Show\Field|Collection exception(string $label = null)
      * @method Show\Field|Collection failed_at(string $label = null)
+     * @method Show\Field|Collection finish(string $label = null)
      * @method Show\Field|Collection content(string $label = null)
+     * @method Show\Field|Collection unfinished(string $label = null)
      * @method Show\Field|Collection reply_count(string $label = null)
      * @method Show\Field|Collection view_count(string $label = null)
      * @method Show\Field|Collection email(string $label = null)

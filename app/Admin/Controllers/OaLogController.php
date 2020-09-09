@@ -19,17 +19,16 @@ class OaLogController extends AdminController
     {
         return Grid::make(new OaLog(), function (Grid $grid) {
             $grid->column('id')->sortable();
-            $grid->column('title');
+            $grid->column('finish');
             $grid->column('content');
+            $grid->column('unfinished');
             $grid->column('user_id');
             $grid->column('reply_count');
             $grid->column('view_count');
             $grid->column('created_at');
             $grid->column('updated_at')->sortable();
         
-            $grid->enableDialogCreate();
             $grid->toolsWithOutline(false);
-            $grid->setDialogFormDimensions('50%', '50%');
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
         
@@ -48,8 +47,9 @@ class OaLogController extends AdminController
     {
         return Show::make($id, new OaLog(), function (Show $show) {
             $show->field('id');
-            $show->field('title');
+            $show->field('finish');
             $show->field('content');
+            $show->field('unfinished');
             $show->field('user_id');
             $show->field('reply_count');
             $show->field('view_count');
@@ -67,8 +67,39 @@ class OaLogController extends AdminController
     {
         return Form::make(new OaLog(), function (Form $form) {
             $form->display('id');
-            $form->text('title')->rules('required|min:2');
-            $form->textarea('content')->rules('required|min:5');
+
+            $form->hasMany('finish', function (Form\NestedForm $form) {
+                $form->text('plan');
+                $form->slider('schedule')->options(['max' => 100, 'min' => 1, 'step' => 1, 'postfix' => '%']);
+            })->useTable()->saving(function ($v) {
+                return json_encode($v);
+            });
+
+           $form->editor('content')->rules('required|min:5', [
+                'required' => '内容不能为空',
+                'min' => '内容不能少于5个字符',
+            ]);
+            
+            $form->hasMany('unfinished', function (Form\NestedForm $form) {
+                $form->text('plan');
+            })->useTable()->saving(function ($v) {
+                return json_encode($v);
+            });
+
+
+            // $form->hasMany('tomorrow_work', function (Form\NestedForm $form) {
+            //     $form->text('title');
+            // })->useTable();
+
+            // $form->embeds('title', function ($form) {
+            //     $form->text('key1');
+            //     $form->slider('key2')->options(['max' => 100, 'min' => 1, 'step' => 1, 'postfix' => '%']);
+            // })->saving(function ($v) {
+            //     return json_encode($v);
+            // });
+            
+            // $form->list('title')->rules('required|min:5');
+
             $form->hidden('user_id')->default(1);
             $form->hidden('reply_count')->default(0);
             $form->hidden('view_count')->default(0);

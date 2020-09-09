@@ -14,7 +14,13 @@ class CreateOaLogsTable extends Migration
     public function up()
     {
         Schema::create('oa_logs', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->String('finish')->index();
+            $table->text('content');
+            $table->String('unfinished')->index();
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->integer('reply_count')->unsigned()->default(0);
+            $table->integer('view_count')->unsigned()->default(0);
             $table->timestamps();
         });
     }
