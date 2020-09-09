@@ -218,5 +218,7 @@ return [
         'extensions'    => '扩展',
         'scaffold'      => '代码生成器',
         'icons'         => '图标',
+        'logs'         => '日志',
+        'user_management'   => '用户管理',
     ],
 ];
