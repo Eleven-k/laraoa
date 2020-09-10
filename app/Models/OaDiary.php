@@ -6,9 +6,9 @@ use Dcat\Admin\Traits\HasDateTimeFormatter;
 
 use Illuminate\Database\Eloquent\Model;
 
-class OaLog extends Model
+class OaDiary extends Model
 {
 	use HasDateTimeFormatter;
-    protected $table = 'oa_logs';
+    protected $table = 'oa_diaries';
     
 }

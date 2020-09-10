@@ -2,10 +2,10 @@
 
 namespace App\Admin\Repositories;
 
-use App\Models\OaLog as Model;
+use App\Models\OaDiary as Model;
 use Dcat\Admin\Repositories\EloquentRepository;
 
-class OaLog extends EloquentRepository
+class OaDiary extends EloquentRepository
 {
     /**
      * Model.
