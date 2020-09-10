@@ -24,7 +24,7 @@ class OaDiaryController extends AdminController
         return Grid::make(new OaDiary(), function (Grid $grid) {
             // $grid->column('id')->sortable();
             $grid->column('created_at');
-            $grid->column('content')->replace();
+            $grid->column('content');
             // $grid->column('finish');
             $grid->column('user_id');
             $grid->column('reply_count');
@@ -77,7 +77,7 @@ class OaDiaryController extends AdminController
                 $table->slider('schedule')->options(['max' => 100, 'min' => 1, 'step' => 10, 'postfix' => '%']);
             })->saveAsJson()->disable();
 
-            $form->editor('content')->rules('required|min:5', [
+            $form->markdown('content')->rules('required|min:5', [
                 'required' => '内容不能为空',
                 'min' => '内容不能少于5个字符',
             ])->saveAsString();
