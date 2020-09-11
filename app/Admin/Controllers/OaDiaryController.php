@@ -23,16 +23,28 @@ class OaDiaryController extends AdminController
     {
         return Grid::make(new OaDiary(), function (Grid $grid) {
             // $grid->column('id')->sortable();
-            $grid->column('created_at');
-            $grid->column('content');
+            $grid->column('created_at')->sortable()->width('12%');
+
+            $grid->column('content')->display(function ($content) {
+                $content_01 = $content;
+                $content_02 = htmlspecialchars_decode($content_01);
+                $content_03 = str_replace("&nbsp;", "", $content_02);
+                $contents = strip_tags($content_03);
+                $con = mb_substr($contents, 0, 100, "utf-8");
+                return $con;
+            })->limit(69)->link(function ($value) {
+                return admin_url('diaries/', $this->id);
+            })->width('67%');
+
             // $grid->column('finish');
-            $grid->column('user_id');
-            $grid->column('reply_count');
+            $grid->column('user_id')->width('10%');
+            $grid->column('reply_count')->width('5%');
             // $grid->column('unfinished');
-            $grid->column('view_count');
+            $grid->column('view_count')->width('6%');
 
             // $grid->column('updated_at')->sortable();
 
+            $grid->model()->orderBy('id', 'desc');
             $grid->filter(function (Grid\Filter $filter) {
                 $filter->equal('id');
             });
@@ -50,14 +62,19 @@ class OaDiaryController extends AdminController
     {
         return Show::make($id, new OaDiary(), function (Show $show) {
             $show->field('id');
-            $show->field('content');
-            $show->field('finish');
-            $show->field('reply_count');
+            $show->field('finish')->explode()->label();
+            $show->field('content')->unescape();
             $show->field('unfinished');
-            $show->field('user_id');
-            $show->field('view_count');
+            // $show->field('user_id');
+            // $show->field('reply_count');
+            // $show->field('view_count');
             $show->field('created_at');
-            $show->field('updated_at');
+            // $show->field('updated_at');
+
+            // $show->row(function (Show\Row $show) {
+            //     $show->width(3)->id;
+            // });
+
         });
     }
 
@@ -74,10 +91,10 @@ class OaDiaryController extends AdminController
 
             $form->table('finish', function ($table) {
                 $table->text('plan');
-                $table->slider('schedule')->options(['max' => 100, 'min' => 1, 'step' => 10, 'postfix' => '%']);
+                $table->slider('schedule')->options(['max' => 100, 'min' => 1,'step' => 10, 'grid' => false, ]);
             })->saveAsJson()->disable();
 
-            $form->markdown('content')->rules('required|min:5', [
+            $form->editor('content')->rules('required|min:5', [
                 'required' => '内容不能为空',
                 'min' => '内容不能少于5个字符',
             ])->saveAsString();

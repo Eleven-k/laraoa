@@ -1,4 +1,29 @@
 .has-many-finish tbody tr td:nth-child(2) {
-  width: 50%;
+  width: 35%;
+}
+
+.has-many-finish tbody tr td:nth-child(2) .irs-with-grid {
+  height: 43px;
+}
+
+.has-many-finish tbody tr td:nth-child(2) .irs-with-grid .irs-line {
+  top: 15px;
+}
+
+.has-many-finish tbody tr td:nth-child(2) .irs-with-grid .irs-min,
+.has-many-finish tbody tr td:nth-child(2) .irs-with-grid .irs-max {
+  display: none !important;
+}
+
+.has-many-finish tbody tr td:nth-child(2) .irs-with-grid .irs-single {
+  top: -8px;
+}
+
+.has-many-finish tbody tr td:nth-child(2) .irs-with-grid .single {
+  top: 8px;
+}
+
+.has-many-finish tbody .irs-grid {
+  display: none;
 }
 

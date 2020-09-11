@@ -1,5 +1,24 @@
 .has-many-finish {
     tbody {
-        tr td:nth-child(2) {width: 50%;}
+        tr td:nth-child(2) {
+            width: 35%;
+            .irs-with-grid{
+                height: 43px;
+                .irs-line{
+                    top: 15px;
+                }
+                .irs-min,.irs-max{
+                    display: none !important;
+                }
+                .irs-single{
+                    top: -8px;
+                }
+                .single{
+                    top: 8px;
+                }
+            }
+        }
+        .irs-grid {display: none;}
+       
     }
 }
