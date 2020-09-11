@@ -8,6 +8,7 @@ use Dcat\Admin\Grid;
 use Dcat\Admin\Show;
 use Dcat\Admin\Controllers\AdminController;
 use Dcat\Admin\Admin;
+use Dcat\Admin\Support\JavaScript;
 
 class OaDiaryController extends AdminController
 {

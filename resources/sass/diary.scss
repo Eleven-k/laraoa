@@ -1,24 +1,102 @@
 .has-many-finish {
-    tbody {
-        tr td:nth-child(2) {
-            width: 35%;
-            .irs-with-grid{
-                height: 43px;
-                .irs-line{
-                    top: 15px;
-                }
-                .irs-min,.irs-max{
-                    display: none !important;
-                }
-                .irs-single{
-                    top: -8px;
-                }
-                .single{
-                    top: 8px;
-                }
+  tbody {
+    tr td:nth-child(2) {
+      width: 35%;
+
+      .irs-with-grid {
+        height: 43px;
+
+        .irs-line {
+          top: 15px;
+        }
+
+        .irs-min,
+        .irs-max {
+          display: none !important;
+        }
+
+        .irs-single {
+          top: -8px;
+        }
+
+        .single {
+          top: 8px;
+        }
+      }
+    }
+
+    .irs-grid {
+      display: none;
+    }
+
+  }
+}
+
+.form-group {
+  .tox .tox-menubar {
+    display: none;
+  }
+
+  .tox-toolbar-overlord {
+    div:nth-child(1) {
+      float: left;
+
+      div:nth-child(1) {
+        display: none;
+      }
+
+      div:nth-child(2) {
+        
+          display: none;
+       
+      }
+
+      div:nth-child(3) {
+        display: none;
+      }
+      div:nth-child(4) {
+        button:nth-child(1) {
+            display: none;
+          }
+      }
+
+      div:nth-child(5) {
+        button:nth-child(6) {
+          display: none;
+        }
+      }
+    }
+
+    div:nth-child(2){
+        div:nth-child(1){
+            button:nth-child(4){
+                display: none;
             }
         }
-        .irs-grid {display: none;}
-       
+        div:nth-child(2){
+            button:nth-child(1){
+                display: none;
+            }
+            button:nth-child(2){
+                display: none;
+            }
+            div:nth-child(3){
+                display: none;
+            }
+            button:nth-child(6){
+                display: none;
+            }
+            button:nth-child(7){
+                display: none;
+            }
+        }
+        div:nth-child(3){
+            button{
+                display: none;
+            }
+        }
     }
+
+  }
+
 }

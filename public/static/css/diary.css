@@ -27,3 +27,59 @@
   display: none;
 }
 
+.form-group .tox .tox-menubar {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(1) {
+  float: left;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(1) div:nth-child(1) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(1) div:nth-child(2) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(1) div:nth-child(3) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(1) div:nth-child(4) button:nth-child(1) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(1) div:nth-child(5) button:nth-child(6) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(2) div:nth-child(1) button:nth-child(4) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(2) div:nth-child(2) button:nth-child(1) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(2) div:nth-child(2) button:nth-child(2) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(2) div:nth-child(2) div:nth-child(3) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(2) div:nth-child(2) button:nth-child(6) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(2) div:nth-child(2) button:nth-child(7) {
+  display: none;
+}
+
+.form-group .tox-toolbar-overlord div:nth-child(2) div:nth-child(3) button {
+  display: none;
+}
+
